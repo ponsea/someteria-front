@@ -12,7 +12,7 @@
       },
       "root": "projects/crx-background",
       "sourceRoot": "projects/crx-background/src",
-      "prefix": "app",
+      "prefix": "st",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -173,7 +173,7 @@
       },
       "root": "projects/frame",
       "sourceRoot": "projects/frame/src",
-      "prefix": "app",
+      "prefix": "st",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
