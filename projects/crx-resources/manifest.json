@@ -1,0 +1,21 @@
+{
+  "name": "Someteria",
+  "version": "1.0",
+  "description": "WWW chat platform",
+  "permissions": ["<all_urls>", "tabs", "storage", "webNavigation"],
+    "background": {
+    "scripts": [
+      "background/runtime.js",
+      "background/polyfills.js",
+      "background/vendor.js",
+      "background/main.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup/index.html"
+  },
+  "options_page": "options/index.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "manifest_version": 2
+}
