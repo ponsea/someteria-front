@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crx-background",
+            "outputPath": "dist/crx/background",
             "index": "projects/crx-background/src/index.html",
             "main": "projects/crx-background/src/main.ts",
             "polyfills": "projects/crx-background/src/polyfills.ts",

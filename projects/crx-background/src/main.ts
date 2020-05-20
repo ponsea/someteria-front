@@ -10,3 +10,5 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+setInterval(() => console.log('waaaai', chrome), 1000);
