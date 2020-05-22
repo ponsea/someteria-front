@@ -284,6 +284,127 @@
           }
         }
       }
+    },
+    "crx-popup": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/crx-popup",
+      "sourceRoot": "projects/crx-popup/src",
+      "prefix": "st",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/crx/popup",
+            "index": "projects/crx-popup/src/index.html",
+            "main": "projects/crx-popup/src/main.ts",
+            "polyfills": "projects/crx-popup/src/polyfills.ts",
+            "tsConfig": "projects/crx-popup/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/crx-popup/src/favicon.ico",
+              "projects/crx-popup/src/assets"
+            ],
+            "styles": [
+              "projects/crx-popup/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/crx-popup/src/environments/environment.ts",
+                  "with": "projects/crx-popup/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "crx-popup:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "crx-popup:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "crx-popup:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/crx-popup/src/test.ts",
+            "polyfills": "projects/crx-popup/src/polyfills.ts",
+            "tsConfig": "projects/crx-popup/tsconfig.spec.json",
+            "karmaConfig": "projects/crx-popup/karma.conf.js",
+            "assets": [
+              "projects/crx-popup/src/favicon.ico",
+              "projects/crx-popup/src/assets"
+            ],
+            "styles": [
+              "projects/crx-popup/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/crx-popup/tsconfig.app.json",
+              "projects/crx-popup/tsconfig.spec.json",
+              "projects/crx-popup/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/crx-popup/e2e/protractor.conf.js",
+            "devServerTarget": "crx-popup:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "crx-popup:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": "8c479432-e661-4482-aff4-1122f6e83728"

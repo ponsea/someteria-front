@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "watch-crx": "run-p 'ng build -- crx-background --watch' 'copy-crx-manifest -- --watch'",
+    "watch-crx": "run-p 'ng build -- crx-background --watch' 'ng build -- crx-popup --watch' 'copy-crx-manifest -- --watch'",
     "copy-crx-manifest": "cpx projects/crx-resources/manifest.json dist/crx",
     "e2e": "ng e2e"
   },
